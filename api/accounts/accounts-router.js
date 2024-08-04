@@ -1,4 +1,5 @@
-const router = require('express').Router()
+const express = require('express');
+const router = express.Router();
 
 const md = require('./accounts-middleware');
 const Account = require('./accounts-model')
@@ -21,7 +22,7 @@ md.checkAccountPayload,
 md.checkAccountNameUnique,
  (req, res, next) => {
   try {
-    
+
     res.json('post account')
   } catch (err) {
     next(err)
